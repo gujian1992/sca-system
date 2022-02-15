@@ -1,0 +1,4 @@
+# Project exclude paths
+/sca-common/target/
+/sca-order/target/
+/sca-product/target/

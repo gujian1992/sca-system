@@ -1,0 +1,32 @@
+server:
+  port: 8007
+spring:
+  zipkin:
+    base-url: http://127.0.0.1:9411/ #zipkin地址
+    discovery-client-enabled: false  #不用开启服务发现
+    sleuth:
+      sampler:
+        probability: 1.0 #采样百分比
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.43.190.48:8848
+        username: nacos
+        password: nacos
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+feign:
+  hystrix:
+    enabled: false
+  client:
+    config:
+      feignName:
+        connectTimeout: 5000  # 相当于Request.Optionsn 连接超时时间
+        readTimeout: 5000     # 相当于Request.Options 读取超时时间
+        loggerLevel: full     # 配置Feign的日志级别，相当于代码配置方式中的Logger
+logging:
+  config: classpath:logback-spring.xml

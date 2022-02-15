@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: product
+  cloud:
+    nacos:
+      config:
+        server-addr: 101.43.190.48:8848
+        username: nacos
+        password: nacos
+        file-extension: yaml
+  profiles:
+    active: dev
