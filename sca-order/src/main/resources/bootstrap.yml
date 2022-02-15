@@ -1,12 +1,12 @@
 spring:
   application:
-    name: product
+    name: order
   cloud:
     nacos:
       config:
         server-addr: 101.43.190.48:8848
-        username: nacos
         password: nacos
+        username: nacos
         file-extension: yaml
         namespace: 12aa0601-314c-4423-b0de-c7376a8a584c
   profiles:
